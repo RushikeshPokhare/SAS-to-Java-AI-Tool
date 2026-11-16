@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAS to Java AI Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Used to extract the ZIP returned by FastAPI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>SAS to Java AI Converter</h1>
+        <p>Convert SAS programs into Java 21 using AI</p>
+    </header>
+
+    <section class="panel">
+        <h2>1. Select Input</h2>
+
+        <div class="selection-buttons">
+            <button id="selectFilesBtn" class="secondary">
+                Select SAS Files
+            </button>
+
+            <button id="selectFolderBtn" class="secondary">
+                Select Folder
+            </button>
+        </div>
+
+        <input type="file" id="fileInput" accept=".sas" multiple hidden>
+
+        <input type="file" id="folderInput"
+               webkitdirectory directory multiple hidden>
+
+        <div id="selectedFiles" class="file-list">
+            No files selected.
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>2. Select Output Folder</h2>
+
+        <button id="selectOutputBtn" class="secondary">
+            Choose Output Folder
+        </button>
+
+        <p id="outputPath">No output folder selected.</p>
+    </section>
+
+    <section class="panel">
+        <h2>3. Conversion</h2>
+
+        <button id="convertBtn" class="primary">
+            Convert to Java
+        </button>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <p id="status">Waiting for input...</p>
+    </section>
+
+    <section class="panel">
+        <h2>Conversion Logs</h2>
+        <pre id="logs">Application ready.</pre>
+    </section>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
